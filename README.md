@@ -26,7 +26,7 @@ Attentive Graph Neural Network (AGNN) is a new recommendation framework tailored
    + It records user ratings on local business scaled from 1-5. Additionally, social relations as well as business attributes (e.g., category, city) are also included. For Yelp, we extract item knowledge from the local business information network (e.g., category, location,
 and attribute) as KG data. The format is as follows:
 
-      id:11163|genre:Accountants,Professional Services,Tax Services,Financial Services|city:Peoria
+         id:11163|genre:Accountants,Professional Services,Tax Services,Financial Services|city:Peoria
       
 ## Modules 
 
@@ -60,6 +60,14 @@ For clarify, hereafter we use movieLens dataset as a toy example to demonstrate 
 
    + Feed both postive and negative path into the recurrent neural network, train and evaluate the model
    
-   + Input Data: positive-path.txt, negative-path.txt, training.txt, test.txt, pre-train-user-embedding.txt, pre-train-movie-embedding.txt (To speed up model training process, the user and movie embedding is pre-trained via [2]. You may also use TransE [3] or TransH [4] to pre-train the embeddings).
+   + Input Data: positive-path.txt, negative-path.txt, training.txt, test.txt, pre-train-user-embedding.txt, pre-train-movie-embedding.txt (To speed up model training process, the user and movie embedding is pre-trained via TransR[1]. You may also use TransE [2] or TransH [3] to pre-train the embeddings).
 
    + Output Data: results.txt
+
++ References
+
+[1] Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, and Xuan Zhu. 2015. Learningentity and relation embeddings for knowledge graph completion. InAAAI.
+
+[2] Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Ok-sana Yakhnenko. 2013.  Translating embeddings for modeling multi-relationaldata. InNIPS. 2787–2795.
+
+[3] Zhen Wang, Jianwen Zhang, Jianlin Feng, and Zheng Chen. 2014. Knowledgegraph embedding by translating on hyperplanes. InAAAI.
