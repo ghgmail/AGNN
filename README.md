@@ -32,38 +32,39 @@ and attribute) as KG data. The format is as follows:
 
 For clarify, hereafter we use movieLens dataset as a toy example to demonstrate the detailed modules of AGNN. For Last-FM and yelp dataset, you need to do some adaptation for the code and tune some parameters.
 
-+ Data Split (data-split.py)
++ Data Split (split_train_test.py)
 
    + Split the user-movie rating data into training and test data
 
-   + Input Data: rating-delete-missing-itemid.txt
+   + Input Data: user_movies.txt
 
    + Output Data: training.txt, test.txt
 
-+ Negative Sample (negative-sample.py)
++ Negative Sample (negative_sample_for_train.py, negative_sample_for_test.py)
 
-   + Sample negative movies for each user to balance the model training
+   + Sample negative movies for each user to balance the model training & Sample negative movies for test. 
+    
+   + Input Data: training.txt; test.txt
    
-   + Input Data: training.txt
+   + Output Data: negative.txt; test_negative.txt
+
++ Path Sampling （path_positive.py, path_negative.py, path_test_negative.py）
+
+   + Extract paths for positive and negative user-moive interaction and prepare paths data for test, respectively.
    
-   + Output Data: negative.txt
-
-+ Path Extraction （path-extraction.py）
-
-   + Extract paths for both positive and negative user-moive interaction
-
-   + Input Data: training.txt, negative.txt, auxiliary-mapping.txt,
-
-   + Output Data: positive-path.txt, negative-path.txt
+   + Input Data: user-movie interaction for positive/negative/test rating
+   
+   + Output Data: sampled path for positive/negtiave/test user-item pair
 
 + Attentive Graph Neural Network (model.py)
 
-   + Feed both postive and negative path into the recurrent neural network, train and evaluate the model
+   + Model for Attentive Graph Neural Network
+
++ Train and Test (GGNNTrain_Relation.py, Main.py)
+
+   + Feed both postive and negative path into the AGNN, train and evaluate the model
+ 
    
-   + Input Data: positive-path.txt, negative-path.txt, training.txt, test.txt, pre-train-user-embedding.txt, pre-train-movie-embedding.txt (To speed up model training process, the user and movie embedding is pre-trained via TransR[1]. You may also use TransE [2] or TransH [3] to pre-train the embeddings).
-
-   + Output Data: results.txt
-
 + References
 
    [1] Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, and Xuan Zhu. 2015. Learningentity and relation embeddings for knowledge graph      completion. In AAAI.
