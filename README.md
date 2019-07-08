@@ -66,8 +66,8 @@ For clarify, hereafter we use movieLens dataset as a toy example to demonstrate 
 
 + References
 
-[1] Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, and Xuan Zhu. 2015. Learningentity and relation embeddings for knowledge graph completion. InAAAI.
+   [1] Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, and Xuan Zhu. 2015. Learningentity and relation embeddings for knowledge graph completion. InAAAI.
 
-[2] Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Ok-sana Yakhnenko. 2013.  Translating embeddings for modeling multi-relationaldata. InNIPS. 2787–2795.
+   [2] Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Ok-sana Yakhnenko. 2013.  Translating embeddings for modeling multi-relationaldata. InNIPS. 2787–2795.
 
-[3] Zhen Wang, Jianwen Zhang, Jianlin Feng, and Zheng Chen. 2014. Knowledgegraph embedding by translating on hyperplanes. InAAAI.
+   [3] Zhen Wang, Jianwen Zhang, Jianlin Feng, and Zheng Chen. 2014. Knowledgegraph embedding by translating on hyperplanes. InAAAI.
