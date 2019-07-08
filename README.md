@@ -7,7 +7,7 @@ Attentive Graph Neural Network (AGNN) is a new recommendation framework tailored
 ## Environment Requirement
 + Python 2.7
 + Pytorch (cudatoolkit=9.0)
-+ numpy == 1.15.4
++ numpy == 1.16.2
 + networkx == 2.2
 
 ## Datasets
