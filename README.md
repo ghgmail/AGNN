@@ -12,7 +12,7 @@ Attentive Graph Neural Network (AGNN) is a new recommendation framework tailored
 ## Datasets
 
 + MovieLens-1M
-   + For the MoiveLens dataset, we crawl the corresponding IMDB dataset as movie auxiliary information, including genre, director, and actor. Note that we automatically remove the movies without auxilairy information. We then combined MovieLens and IMDB by movie title and released year. The combined data is save in a txt file (auxiliary.txt) and the format is as follows:    
+   + For the MoiveLens dataset, we crawl the corresponding IMDB dataset as movie auxiliary information, including genre, director, and actor. Note that we automatically remove the movies without auxilairy information. We then combined MovieLens and IMDB by movie title and released year. The combined data is saved in a txt file (auxiliary.txt) and the format is as follows:    
    
          id:1|genre:Animation,Adventure,Comedy|director:John Lasseter|actors:Tom Hanks,Tim Allen,Don Rickles,Jim Varney
    
@@ -21,7 +21,11 @@ Attentive Graph Neural Network (AGNN) is a new recommendation framework tailored
          userid itemid rating timestamp
    
 + Last-FM
-   + This is the music listening dataset collected from Last.fm online music systems. Wherein, the tracks are viewed as the items. In particular, we take the subset of the dataset where the timestamp is from Jan, 2015 to June, 2015. For Last-FM,we map items into Freebase entities via title matching if there isa mapping available. 
+
+   + This is the music listening dataset collected from Last.fm online music systems. Wherein, the tracks are viewed as the items. In particular, we take the subset of the dataset where the timestamp is from Jan, 2015 to June, 2015. For Last-FM,we map items into Freebase entities via title matching if there is a mapping available. The overall KG is saved in kg_final.txt and the format is as follows:
+
+         head_entity_id  relation_id  tail_entity_id
+   
 + Yelp
    + It records user ratings on local business scaled from 1-5. Additionally, social relations as well as business attributes (e.g., category, city) are also included. For Yelp, we extract item knowledge from the local business information network (e.g., category, location,
 and attribute) as KG data. The format is as follows:
