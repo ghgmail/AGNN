@@ -11,7 +11,7 @@ Attentive Graph Neural Network (AGNN) is a new recommendation framework tailored
 
 ## Datasets
 
-+ MovieLens-1M
++ MovieLens
    + For the MoiveLens dataset, we crawl the corresponding IMDB dataset as movie auxiliary information, including genre, director, and actor. Note that we automatically remove the movies without auxilairy information. We then combined MovieLens and IMDB by movie title and released year. The combined data is saved in a txt file (auxiliary.txt) and the format is as follows:    
    
          id:1|genre:Animation,Adventure,Comedy|director:John Lasseter|actors:Tom Hanks,Tim Allen,Don Rickles,Jim Varney
@@ -34,7 +34,7 @@ and attribute) as KG data. The format is as follows:
       
 ## Modules 
 
-For clarify, hereafter we use movieLens dataset as a toy example to demonstrate the detailed modules of AGNN. For Last-FM and yelp dataset, you need to do some adaptation for the code and tune some parameters.
+For clarify, hereafter we use movieLens dataset as a toy example to demonstrate the detailed modules of AGNN. 
 
 + Data Split (split_train_test.py)
 
