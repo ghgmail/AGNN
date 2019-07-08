@@ -26,7 +26,8 @@ Attentive Graph Neural Network (AGNN) is a new recommendation framework tailored
    + It records user ratings on local business scaled from 1-5. Additionally, social relations as well as business attributes (e.g., category, city) are also included. For Yelp, we extract item knowledge from the local business information network (e.g., category, location,
 and attribute) as KG data. The format is as follows:
 
-            id:11163|genre:Accountants,Professional Services,Tax Services,Financial Services|city:Peoria
+      id:11163|genre:Accountants,Professional Services,Tax Services,Financial Services|city:Peoria
+      
 ## Modules 
 
 For clarify, hereafter we use movieLens dataset as a toy example to demonstrate the detailed modules of AGNN. For Last-FM and yelp dataset, you need to do some adaptation for the code and tune some parameters.
@@ -47,3 +48,18 @@ For clarify, hereafter we use movieLens dataset as a toy example to demonstrate 
    
    + Output Data: negative.txt
 
++ Path Extraction （path-extraction.py）
+
+   + Extract paths for both positive and negative user-moive interaction
+
+   + Input Data: training.txt, negative.txt, auxiliary-mapping.txt,
+
+   + Output Data: positive-path.txt, negative-path.txt
+
++ Attentive Graph Neural Network (model.py)
+
+   + Feed both postive and negative path into the recurrent neural network, train and evaluate the model
+   
+   + Input Data: positive-path.txt, negative-path.txt, training.txt, test.txt, pre-train-user-embedding.txt, pre-train-movie-embedding.txt (To speed up model training process, the user and movie embedding is pre-trained via [2]. You may also use TransE [3] or TransH [4] to pre-train the embeddings).
+
+   + Output Data: results.txt
